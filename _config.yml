@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Letian Yin's Webpage"
+title                    : "Letian Yin's website"
 title_separator          : "-"
 name                     : &name "Letian Yin"
 description              : &description "Economics PhD student"
