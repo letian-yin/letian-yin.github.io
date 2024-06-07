@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "Miscellaneoush"
+title: "Miscellaneous"
 permalink: /miscellaneous/
 author_profile: true
 ---
