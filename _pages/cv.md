@@ -7,4 +7,4 @@ redirect_from:
   - /resume
 ---
 
-<object data="letian-yin.github.io/files/CV_202404.pdf" width="1000" height="1000" type='application/pdf'/>
+<embed src="letian-yin.github.io/files/CV_202404.pdf" width="1000" height="1000" type='application/pdf'/>
