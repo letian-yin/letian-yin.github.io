@@ -6,7 +6,9 @@ redirect_from:
   - /about.html
 ---
 
-Welcome to my website! I am an Economics PhD student at the University of California San Diego.
+Welcome to my website!
+
+I am an Economics PhD student at the University of California San Diego.
 
 My research interests are Public Finance and Labor Economics, with a focus on safety net programs, household finance and fertility.
 
