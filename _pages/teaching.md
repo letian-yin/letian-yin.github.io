@@ -7,7 +7,7 @@ author_profile: true
 
 ## As a Teaching Assistant at UCSD
 **ECON 120B - Econometrics B** \
-2022 Fall, 2024 Spring
+2022 Fall, 2024 Spring, 2024 Fall
 
 **GPEC 486 - Economic and Social Development of China** (Master's level) \
 2024 Winter
