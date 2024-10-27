@@ -13,10 +13,8 @@ Our paper examines how overcrowding in maternity wards influences concurrent bir
 </details>
 
 <br/><br/>
-
 **The Financial Impacts of Pregnancy and Childbirth** \
 with [Lei Ma](https://leima-econ.com/) and Victoria Wang
 
 <br/><br/>
-
 **Infant Health and the Inter-generational Effects of Early Cash Transfers**
