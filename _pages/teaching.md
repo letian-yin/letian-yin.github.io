@@ -9,7 +9,7 @@ author_profile: true
 **ECON 120B - Econometrics B** \
 2022 Fall, 2024 Spring, 2024 Fall
 
-**GPEC 486 - Economic and Social Development of China** (Master's level) \
+**GPEC 486 - Economic and Social Development of China** (Chinese Economy, Master's level) \
 2024 Winter
 
 **ECON 100B - Microeconomics B** \
@@ -18,5 +18,5 @@ author_profile: true
 **ECON 104 - Economics with Morals** \
 2023 Spring
 
-**GPCO 404 - Market Failures** (Master's level) \
+**GPCO 404 - Market Failures** (Public Economics, Master's level) \
 2023 Winter
