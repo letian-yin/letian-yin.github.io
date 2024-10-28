@@ -140,6 +140,8 @@ analytics:
   google:
     tracking_id          :
 
+# Google Analytics
+google_analytics: G-XJWP59PCSY
 
 # Reading Files
 include:
