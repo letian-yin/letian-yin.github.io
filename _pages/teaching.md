@@ -15,6 +15,9 @@ author_profile: true
 **ECON 120B - Econometrics B** \
 2022 Fall, 2024 Spring
 
+**ECON 120C - Econometrics C** \
+2024 Summer
+
 **ECON 100B - Microeconomics B** \
 2023 Fall
 
