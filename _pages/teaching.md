@@ -12,11 +12,11 @@ author_profile: true
 **MGTF 404 - Financial Econometrics and Empirical Methods** (Master's level) \
 2024 Fall
 
-**ECON 120B - Econometrics B** \
-2022 Fall, 2024 Spring
-
 **ECON 120C - Econometrics C** \
 2024 Summer
+
+**ECON 120B - Econometrics B** \
+2022 Fall, 2024 Spring
 
 **ECON 100B - Microeconomics B** \
 2023 Fall
