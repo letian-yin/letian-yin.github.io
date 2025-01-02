@@ -9,8 +9,11 @@ author_profile: true
 **GPEC 486 - Economic and Social Development of China** (Chinese Economy, Master's level) \
 2024 Winter, 2025 Winter
 
+**MGTF 404 - Financial Econometrics and Empirical Methods** (Master's level) \
+2024 Fall
+
 **ECON 120B - Econometrics B** \
-2022 Fall, 2024 Spring, 2024 Fall
+2022 Fall, 2024 Spring
 
 **ECON 100B - Microeconomics B** \
 2023 Fall
