@@ -6,7 +6,7 @@ redirect_from:
   - /about.html
 ---
 
-Thank you for visiting my website!
+Welcome to my website!
 
 I am a PhD candidate in Economics at the University of California San Diego.
 
