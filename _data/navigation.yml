@@ -6,8 +6,10 @@ main:
   - title: "Teaching"
     url: /teaching/    
     
+  #- title: "CV"
+  #  url: /cv/
   - title: "CV"
-    url: /cv/
+    url: /files/CV_202501.pdf
     
   #- title: "Miscellaneous"
   #  url: /miscellaneous/
