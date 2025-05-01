@@ -14,7 +14,7 @@ Abstract: <em>We examine how maternity ward overcrowding impacts both concurrent
 ## Work in Progress
 
 **The Financial Impacts of Pregnancy and Childbirth** \
-with [Lei Ma](https://leima-econ.com/) and [Victoria Wang](https://sites.google.com/view/victoria-wang)
+with [Lei Ma](https://leima-econ.com/) and [Victoria Wang](https://www.victoriawang.org/)
 
 **The Effect of Social Security’s Full Retirement Age on the Economic Well-Being of Older Americans**
 
