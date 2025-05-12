@@ -21,7 +21,7 @@ repository               : "letian-yin/letian-yin.github.io/"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile_202505.jpeg"
+  avatar           : "profile_pic.jpeg"
   name             : "Letian Yin"
   pronouns         : # example: "she/her"  
   bio              : "Economics PhD student"
