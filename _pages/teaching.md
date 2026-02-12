@@ -25,4 +25,4 @@ author_profile: true
 2022, 2024
 
 **ECON 104 - Economics with Morals** \
-2023 Spring
+2023
