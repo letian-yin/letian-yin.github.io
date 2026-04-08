@@ -11,8 +11,7 @@ author_profile: true
 ))
 
 **ECON 100B - Microeconomics B** \
-2023, 2025 ([Evaluations](https://www.dropbox.com/scl/fi/20bqcdwpudg1tlit83wcw/2025_fall_Econ_100B_A.pdf?rlkey=iwxyx9wha2d40xnvnez6bkpp3&st=1exa69qs&dl=0)
-)
+2023, 2025 ([Evaluations](https://www.dropbox.com/scl/fi/20bqcdwpudg1tlit83wcw/2025_fall_Econ_100B_A.pdf?rlkey=iwxyx9wha2d40xnvnez6bkpp3&st=1exa69qs&dl=0))
 
 **ECON 120C - Econometrics C** \
 2024, 2025
