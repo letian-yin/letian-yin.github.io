@@ -29,9 +29,13 @@ $bodoni                     : "Bodoni MT", serif;
 $calisto                    : "Calisto MT", serif;
 $garamond                   : Garamond, serif;
 
-$global-font-family         : $sans-serif;
-$header-font-family         : $sans-serif;
-$caption-font-family        : $serif;
+// $global-font-family         : $sans-serif;
+// $header-font-family         : $sans-serif;
+// $caption-font-family        : $serif;
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+$global-font-family: 'Lora', serif;
+$header-font-family: 'Lora', serif;
+$caption-font-family: 'Lora', serif;
 
 /* type scale */
 $type-size-1                : 2.441em;  // ~39.056px
