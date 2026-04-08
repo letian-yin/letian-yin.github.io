@@ -14,7 +14,7 @@ author_profile: true
 2023, 2025 ([Evaluations](https://www.dropbox.com/scl/fi/20bqcdwpudg1tlit83wcw/2025_fall_Econ_100B_A.pdf?rlkey=iwxyx9wha2d40xnvnez6bkpp3&st=1exa69qs&dl=0))
 
 **ECON 120C - Econometrics C** \
-2024, 2025
+2024, 2025 ([Evaluations](https://www.dropbox.com/scl/fi/znggsck7n7mpa4oh11l0t/2025_spring_Econ_120C_B00.pdf?rlkey=yvbfynilxs8akhg6o2gjotapg&st=e2b1tb1x&dl=0))
 
 **GPEC 486 - Economic and Social Development of China** (Chinese Economy, Master's level) \
 2024, 2025
