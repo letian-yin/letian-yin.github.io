@@ -31,14 +31,15 @@ layout: compress
 
     {% include scripts.html %}
 
+    <!-- external links and PDF file links open in a new tab -->
+    <script>
+    document.querySelectorAll('a').forEach(function(link) {
+      var href = link.getAttribute('href');
+      if (href && (href.match(/\.(pdf|doc|docx)$/i) || (href.startsWith('http') && !href.includes(location.hostname)))) {
+        link.setAttribute('target', '_blank');
+      }
+    });
+    </script>
+  
   </body>
 </html>
-
-<!-- external links open in a new tab -->
-<script>
-document.querySelectorAll('a[href^="http"]').forEach(function(link) {
-  if (!link.href.includes(location.hostname)) {
-    link.setAttribute('target', '_blank');
-  }
-});
-</script>
