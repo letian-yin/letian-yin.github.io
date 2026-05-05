@@ -1,16 +1,18 @@
 /* ==========================================================================
    Greedy-nav .persist / .tail patch
-   The bundled main.min.js predates upstream's .persist / .persist.tail logic
+   The bundled main.min.js predates upstream's .persist / .persist.tail logic,
    so it can hide any item (including the site title) and on widen-resize it
    appends restored items after the toggle. We override the global updateNav
    with the corrected upstream version, then reset state and re-run.
+
+   We also recalculate after fonts finish loading: on a cold first visit the
+   FA icon glyph for the toggle isn't rendered yet, so $vlinks.width() comes
+   back too small and the layout settles in a wrong state.
    ========================================================================== */
 
 (function () {
   if (typeof window.updateNav !== 'function' || typeof window.$vlinks === 'undefined') return;
 
-  // Re-query at call time so the selector reflects the current DOM, regardless
-  // of whether main.min.js's pre-patch run had moved the toggle around.
   function tail() {
     return window.$vlinks.children('*.persist.tail');
   }
@@ -52,23 +54,28 @@
     window.$btn.attr('count', window.breaks.length);
   };
 
-  // Undo whatever the bundled (unaware-of-persist) updateNav already did:
-  // pull every hidden item back to visible, restore the original DOM order
-  // (Title first, Toggle last), reset the breaks history, then run the
-  // corrected updateNav once.
-  while (window.$hlinks.children().length > 0) {
-    window.$hlinks.children().last().prependTo(window.$vlinks);
+  function reset() {
+    // Restore items the bundled (unaware-of-persist) updateNav already moved.
+    // Bundled JS prepends each removed item into $hlinks in source-order, so
+    // appending the whole batch back to $vlinks preserves original DOM order.
+    window.$hlinks.children().appendTo(window.$vlinks);
+    var $t = tail();
+    if ($t.length > 0) {
+      $t.appendTo(window.$vlinks);
+    }
+    window.breaks.length = 0;
+    window.$btn.addClass('hidden');
+    window.$hlinks.addClass('hidden');
+    window.updateNav();
   }
-  // After the restore loop, the order may not match document order — the
-  // bundled JS prepended into $hlinks while my loop prepended back into
-  // $vlinks, which can leave the toggle ahead of the title. Re-query for the
-  // tail in $vlinks (now that it's been restored) and pin it to the end.
-  var $t0 = tail();
-  if ($t0.length > 0) {
-    $t0.appendTo(window.$vlinks);
+
+  reset();
+
+  // Fonts (FontAwesome) may not be loaded yet on a cold first visit. When
+  // they are, the toggle's icon finally has width and the prior measurement
+  // becomes invalid — recompute.
+  if (document.fonts && document.fonts.ready && typeof document.fonts.ready.then === 'function') {
+    document.fonts.ready.then(reset);
   }
-  window.breaks.length = 0;
-  window.$btn.addClass('hidden');
-  window.$hlinks.addClass('hidden');
-  window.updateNav();
+  $(window).on('load', reset);
 })();
