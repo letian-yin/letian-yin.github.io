@@ -9,7 +9,11 @@
 (function () {
   if (typeof window.updateNav !== 'function' || typeof window.$vlinks === 'undefined') return;
 
-  var $vlinks_persist_tail = window.$vlinks.children('*.persist.tail');
+  // Re-query at call time so the selector reflects the current DOM, regardless
+  // of whether main.min.js's pre-patch run had moved the toggle around.
+  function tail() {
+    return window.$vlinks.children('*.persist.tail');
+  }
 
   window.updateNav = function () {
     var availableSpace = window.$btn.hasClass('hidden')
@@ -30,8 +34,9 @@
       }
     } else {
       while (window.breaks.length > 0 && availableSpace > window.breaks[window.breaks.length - 1]) {
-        if ($vlinks_persist_tail.length > 0) {
-          window.$hlinks.children().first().insertBefore($vlinks_persist_tail);
+        var $t = tail();
+        if ($t.length > 0) {
+          window.$hlinks.children().first().insertBefore($t);
         } else {
           window.$hlinks.children().first().appendTo(window.$vlinks);
         }
@@ -48,13 +53,19 @@
   };
 
   // Undo whatever the bundled (unaware-of-persist) updateNav already did:
-  // pull every hidden item back to visible, reset the breaks history, and
-  // then run the corrected updateNav once.
+  // pull every hidden item back to visible, restore the original DOM order
+  // (Title first, Toggle last), reset the breaks history, then run the
+  // corrected updateNav once.
   while (window.$hlinks.children().length > 0) {
     window.$hlinks.children().last().prependTo(window.$vlinks);
   }
-  if ($vlinks_persist_tail.length > 0) {
-    $vlinks_persist_tail.appendTo(window.$vlinks);
+  // After the restore loop, the order may not match document order — the
+  // bundled JS prepended into $hlinks while my loop prepended back into
+  // $vlinks, which can leave the toggle ahead of the title. Re-query for the
+  // tail in $vlinks (now that it's been restored) and pin it to the end.
+  var $t0 = tail();
+  if ($t0.length > 0) {
+    $t0.appendTo(window.$vlinks);
   }
   window.breaks.length = 0;
   window.$btn.addClass('hidden');
