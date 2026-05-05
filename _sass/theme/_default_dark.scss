@@ -1,0 +1,30 @@
+/* ==========================================================================
+   DEFAULT THEME - DARK VERSION
+   Adapted from upstream academicpages.github.io
+   ========================================================================== */
+
+$dark-bg                    : #474747;
+$dark-bg-light              : mix(#fff, $dark-bg, 80%);
+$dark-bg-lighter            : mix(#fff, $dark-bg, 90%);
+$dark-text                  : #ffffff;
+$dark-link                  : #0ea1c5;
+
+html[data-theme="dark"] {
+  --global-base-color                 : #{$dark-link};
+  --global-bg-color                   : #{$dark-bg};
+  --global-footer-bg-color            : #{$dark-bg};
+  --global-footer-border-color        : #{$light-gray};
+  --global-border-color               : #{$light-gray};
+  --global-dark-border-color          : #{$dark-bg-light};
+  --global-code-background-color      : #fafafa;
+  --global-code-text-color            : #{$darker-gray};
+  --global-fig-caption-color          : #{$light-gray};
+  --global-link-color                 : #{$dark-link};
+  --global-link-color-hover           : #{mix(#000, $dark-link, 25%)};
+  --global-link-color-visited         : #{mix(#fff, $dark-link, 25%)};
+  --global-masthead-link-color        : #{$dark-text};
+  --global-masthead-link-color-hover  : #{$dark-link};
+  --global-text-color                 : #{$dark-text};
+  --global-text-color-light           : #f3f3f3;
+  --global-thead-color                : #{$dark-bg-lighter};
+}

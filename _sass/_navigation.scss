@@ -84,7 +84,7 @@
       text-align: center;
       text-decoration: none;
       color: mix(#fff, $gray, 25%);
-      border: 1px solid $light-gray;
+      border: 1px solid var(--global-dark-border-color);
       border-radius: 0;
 
       &:hover {
@@ -132,7 +132,7 @@
     text-align: center;
     text-decoration: none;
     color: mix(#fff, $gray, 50%);
-    border: 1px solid $light-gray;
+    border: 1px solid var(--global-dark-border-color);
     border-radius: $border-radius;
 
     &:hover {
@@ -405,8 +405,8 @@
     border-bottom: 1px solid $border-color;
 
     &:hover {
-      color: #000;
-      background: $lighter-gray;
+      color: var(--global-text-color);
+      background: var(--global-thead-color);
     }
   }
 

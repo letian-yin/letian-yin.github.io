@@ -1,0 +1,24 @@
+/* ==========================================================================
+   DEFAULT THEME - LIGHT VERSION
+   Adapted from upstream academicpages.github.io
+   ========================================================================== */
+
+:root {
+  --global-base-color                 : #{$primary-color};
+  --global-bg-color                   : #fff;
+  --global-footer-bg-color            : #{$lighter-gray};
+  --global-footer-border-color        : #{$light-gray};
+  --global-border-color               : #{$lighter-gray};
+  --global-dark-border-color          : #{$light-gray};
+  --global-code-background-color      : #fafafa;
+  --global-code-text-color            : #{$darker-gray};
+  --global-fig-caption-color          : #{mix(#fff, $dark-gray, 25%)};
+  --global-link-color                 : #{$info-color};
+  --global-link-color-hover           : #{mix(#000, $info-color, 25%)};
+  --global-link-color-visited         : #{mix(#fff, $info-color, 25%)};
+  --global-masthead-link-color        : #{$primary-color};
+  --global-masthead-link-color-hover  : #{mix(#000, $primary-color, 25%)};
+  --global-text-color                 : #{$dark-gray};
+  --global-text-color-light           : #{$light-gray};
+  --global-thead-color                : #{$lighter-gray};
+}
