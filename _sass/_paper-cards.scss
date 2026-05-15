@@ -1,43 +1,21 @@
 /* ==========================================================================
    Paper cards & pill buttons
-   Shared styles for research listings and inline link buttons (e.g. teaching
-   evaluations). Use `.paper-btn` for the pill button; add `.paper-btn--inline`
-   when the button sits inside a line of body text.
+   --------------------------------------------------------------------------
+   Buttons are named after the SVG shape they carry — the icon is injected
+   automatically via CSS (no need to paste <svg> in markup):
+
+     .bookpage-btn        -> file-page icon  (use for Abstract toggles, etc.)
+     .external-link-btn   -> arrow-out-of-box icon  (use for outbound links)
+
+   Add the `--inline` modifier when the button sits inside a line of body
+   text rather than in a block of buttons:
+
+     .bookpage-btn.bookpage-btn--inline
+     .external-link-btn.external-link-btn--inline
    ========================================================================== */
 
-.paper-block {
-  margin-bottom: 1.8em;
-}
-
-.paper-title {
-  font-weight: 700;
-  line-height: 1.4;
-}
-
-.paper-meta {
-  margin-top: 0.2em;
-
-  a {
-    color: inherit !important;
-    text-decoration: none !important;
-    border-bottom: none !important;
-    transition: color 0.2s ease;
-
-    &:hover {
-      color: var(--global-link-color) !important;
-    }
-  }
-}
-
-.paper-buttons {
-  margin-top: 0.55em;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  line-height: 1;
-}
-
-.paper-btn {
+/* Shared pill style — applied via @extend so we don't repeat the rule set. */
+%paper-btn-base {
   display: inline-flex;
   align-items: center;
   gap: 5px;
@@ -55,8 +33,6 @@
   user-select: none;
   transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
 
-  svg { flex-shrink: 0; }
-
   &:hover,
   &.active {
     border-color: var(--global-link-color);
@@ -64,14 +40,91 @@
   }
 }
 
-/* Tighter sizing + left spacing for buttons placed inline within a paragraph */
-.paper-btn--inline {
+/* Shared icon "slot" rendered as a ::before pseudo-element.
+   `background-color: currentColor` + a mask-image lets the icon inherit
+   whatever text color the button has (including hover & dark mode). */
+%paper-btn-icon {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  flex-shrink: 0;
+}
+
+/* ---- Bookpage button (file-text icon) ------------------------------------ */
+.bookpage-btn {
+  @extend %paper-btn-base;
+
+  &::before {
+    @extend %paper-btn-icon;
+    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/><line x1='16' y1='13' x2='8' y2='13'/><line x1='16' y1='17' x2='8' y2='17'/></svg>");
+            mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><polyline points='14 2 14 8 20 8'/><line x1='16' y1='13' x2='8' y2='13'/><line x1='16' y1='17' x2='8' y2='17'/></svg>");
+  }
+}
+
+/* ---- External-link button (arrow-out-of-box icon) ------------------------ */
+.external-link-btn {
+  @extend %paper-btn-base;
+
+  &::before {
+    @extend %paper-btn-icon;
+    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/><polyline points='15 3 21 3 21 9'/><line x1='10' y1='14' x2='21' y2='3'/></svg>");
+            mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/><polyline points='15 3 21 3 21 9'/><line x1='10' y1='14' x2='21' y2='3'/></svg>");
+  }
+}
+
+/* ---- Inline modifier (tighter sizing, sits in a line of text) ------------ */
+.bookpage-btn--inline,
+.external-link-btn--inline {
   padding: 3px 10px;
   margin-left: 6px;
 }
 
-html[data-theme="dark"] .paper-btn {
-  border-color: var(--global-border-color);
+/* ---- Dark mode: softer resting border (hover still flips to link color) -- */
+html[data-theme="dark"] {
+  .bookpage-btn,
+  .external-link-btn {
+    border-color: var(--global-border-color);
+  }
+}
+
+/* ==========================================================================
+   Paper layout helpers (research listing)
+   ========================================================================== */
+
+.paper-block { margin-bottom: 1.8em; }
+
+.paper-title {
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.paper-meta {
+  margin-top: 0.2em;
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
+    transition: color 0.2s ease;
+
+    &:hover { color: var(--global-link-color) !important; }
+  }
+}
+
+.paper-buttons {
+  margin-top: 0.55em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  line-height: 1;
 }
 
 .paper-abstract {
@@ -88,12 +141,10 @@ html[data-theme="dark"] .paper-btn {
   &.show { display: block; }
 }
 
-/* Softer tint in dark mode so the box doesn't get too saturated */
 html[data-theme="dark"] .paper-abstract {
   background: color-mix(in srgb, var(--global-link-color) 6%, var(--global-bg-color));
 }
 
-/* Fallback for browsers without color-mix */
 @supports not (background: color-mix(in srgb, red, blue)) {
   .paper-abstract {
     background: rgba(127, 127, 127, 0.09);
