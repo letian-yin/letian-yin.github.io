@@ -51,21 +51,39 @@ author_profile: true
   display: none;
   margin-top: 0.6em;
   padding: 0.85em 1.1em;
-  background: color-mix(in srgb, var(--global-link-color) 6%, var(--global-bg-color));
+  background: color-mix(in srgb, var(--global-link-color) 14%, var(--global-bg-color));
   border-left: 3px solid color-mix(in srgb, var(--global-link-color) 55%, transparent);
   border-radius: 0 4px 4px 0;
   font-size: 0.95em;
   line-height: 1.6;
   text-align: justify;
 }
+/* Lighter tint in dark mode so the box doesn't get too saturated */
+html[data-theme="dark"] .paper-abstract {
+  background: color-mix(in srgb, var(--global-link-color) 6%, var(--global-bg-color));
+}
 .paper-abstract.show { display: block; }
 
 /* Fallback for browsers without color-mix (very old) */
 @supports not (background: color-mix(in srgb, red, blue)) {
   .paper-abstract {
-    background: rgba(127,127,127,0.06);
+    background: rgba(127,127,127,0.09);
     border-left-color: rgba(127,127,127,0.4);
   }
+  html[data-theme="dark"] .paper-abstract {
+    background: rgba(127,127,127,0.06);
+  }
+}
+
+/* Co-author links: blend with body text by default, reveal accent on hover */
+.paper-meta a {
+  color: inherit !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  transition: color 0.2s ease;
+}
+.paper-meta a:hover {
+  color: var(--global-link-color) !important;
 }
 </style>
 
