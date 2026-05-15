@@ -29,7 +29,7 @@ author_profile: true
   align-items: center;
   gap: 5px;
   padding: 5px 12px;
-  border: 1px solid var(--global-border-color, #ccc);
+  border: 1px solid #9a9a9a;
   border-radius: 4px;
   color: var(--global-text-color, #222) !important;
   text-decoration: none !important;
@@ -39,6 +39,9 @@ author_profile: true
   background: transparent;
   font-family: inherit;
   user-select: none;
+}
+html[data-theme="dark"] .paper-btn {
+  border-color: var(--global-border-color);
 }
 .paper-btn:hover,
 .paper-btn.active {
