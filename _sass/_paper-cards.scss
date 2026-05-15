@@ -1,0 +1,105 @@
+/* ==========================================================================
+   Paper cards & pill buttons
+   Shared styles for research listings and inline link buttons (e.g. teaching
+   evaluations). Use `.paper-btn` for the pill button; add `.paper-btn--inline`
+   when the button sits inside a line of body text.
+   ========================================================================== */
+
+.paper-block {
+  margin-bottom: 1.8em;
+}
+
+.paper-title {
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.paper-meta {
+  margin-top: 0.2em;
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--global-link-color) !important;
+    }
+  }
+}
+
+.paper-buttons {
+  margin-top: 0.55em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  line-height: 1;
+}
+
+.paper-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border: 1px solid #9a9a9a;
+  border-radius: 4px;
+  color: var(--global-text-color, #222) !important;
+  text-decoration: none !important;
+  font-size: 0.82em;
+  line-height: 1;
+  vertical-align: middle;
+  cursor: pointer;
+  background: transparent;
+  font-family: inherit;
+  user-select: none;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+
+  svg { flex-shrink: 0; }
+
+  &:hover,
+  &.active {
+    border-color: var(--global-link-color);
+    color: var(--global-link-color) !important;
+  }
+}
+
+/* Tighter sizing + left spacing for buttons placed inline within a paragraph */
+.paper-btn--inline {
+  padding: 3px 10px;
+  margin-left: 6px;
+}
+
+html[data-theme="dark"] .paper-btn {
+  border-color: var(--global-border-color);
+}
+
+.paper-abstract {
+  display: none;
+  margin-top: 0.6em;
+  padding: 0.85em 1.1em;
+  background: color-mix(in srgb, var(--global-link-color) 14%, var(--global-bg-color));
+  border-left: 3px solid color-mix(in srgb, var(--global-link-color) 55%, transparent);
+  border-radius: 0 4px 4px 0;
+  font-size: 0.95em;
+  line-height: 1.6;
+  text-align: justify;
+
+  &.show { display: block; }
+}
+
+/* Softer tint in dark mode so the box doesn't get too saturated */
+html[data-theme="dark"] .paper-abstract {
+  background: color-mix(in srgb, var(--global-link-color) 6%, var(--global-bg-color));
+}
+
+/* Fallback for browsers without color-mix */
+@supports not (background: color-mix(in srgb, red, blue)) {
+  .paper-abstract {
+    background: rgba(127, 127, 127, 0.09);
+    border-left-color: rgba(127, 127, 127, 0.4);
+  }
+  html[data-theme="dark"] .paper-abstract {
+    background: rgba(127, 127, 127, 0.06);
+  }
+}
