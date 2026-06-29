@@ -119,6 +119,17 @@ html[data-theme="dark"] {
   }
 }
 
+/* Email link (about page): mirrors the coauthor link above — resting text
+   color, blue on hover — but keeps a persistent underline. */
+.email-link {
+  color: inherit !important;
+  text-decoration: underline !important;
+  border-bottom: none !important;
+  transition: color 0.2s ease;
+
+  &:hover { color: var(--global-link-color) !important; }
+}
+
 .paper-buttons {
   margin-top: 0.55em;
   display: flex;
