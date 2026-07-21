@@ -9,7 +9,7 @@ main:
   #- title: "CV"
   #  url: /cv/
   - title: "CV"
-    url: /files/curriculum_vitae.pdf
+    url: https://letian-yin.github.io/share/CV_Yin.pdf
     
   #- title: "Miscellaneous"
   #  url: /miscellaneous/
