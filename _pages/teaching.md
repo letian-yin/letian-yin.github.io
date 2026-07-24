@@ -16,10 +16,10 @@ author_profile: true
 2023, 2025 <a class="external-link-btn external-link-btn--inline" href="https://letian-yin.github.io/share/teaching/2025_fall_Econ_100B_A00.pdf" target="_blank" rel="noopener">Evaluations</a>
 
 **ECON 120C - Econometrics C** \
-2024, 2025
+2024, 2025 <a class="external-link-btn external-link-btn--inline" href="https://letian-yin.github.io/share/teaching/2025_spring_Econ_120C_B00.pdf" target="_blank" rel="noopener">Evaluations</a>
 
 **GPEC 486 - Economic and Social Development of China** (Chinese Economy, Master's level) \
-2024, 2025
+2024, 2025 <a class="external-link-btn external-link-btn--inline" href="https://letian-yin.github.io/share/teaching/2025_winter_GPEC_486_A00.pdf" target="_blank" rel="noopener">Evaluations</a>
 
 **MGTF 404 - Financial Econometrics and Empirical Methods** (Master's level) \
 2024
