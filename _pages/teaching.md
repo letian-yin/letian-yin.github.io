@@ -24,5 +24,5 @@ author_profile: true
 **MGTF 404 - Financial Econometrics and Empirical Methods** (Master's level) \
 2024
 
-**ECON 104 - Economics with Morals** \
+**ECON 104 - Economics with Morals** (Behavioral Economics) \
 2023
