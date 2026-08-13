@@ -36,9 +36,9 @@ function toggleAbstract(id, btn) {
 </div>
 
 <div class="paper-block">
-  <div class="paper-title">The Effect of Social Security's Full Retirement Age on the Economic Well-Being of Older Americans</div>
+  <div class="paper-title">Retirement Age Thresholds and the Economic Well-Being of Older Americans</div>
 </div>
 
 <div class="paper-block">
-  <div class="paper-title">Infant Health and the Inter-generational Effects of Early Cash Transfers</div>
+  <div class="paper-title">The Intergenerational Effects of Childhood Cash Transfers</div>
 </div>
