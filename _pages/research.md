@@ -14,6 +14,13 @@ function toggleAbstract(id, btn) {
 }
 </script>
 
+## Job Market Paper
+
+<div class="paper-block">
+  <div class="paper-title">Does Cash Buy Credit? Evidence from the Timing of Child-Related Tax Benefits</div>
+  <div class="paper-meta">(draft coming soon!)</div>
+</div>
+
 ## Working Papers
 
 <div class="paper-block">
