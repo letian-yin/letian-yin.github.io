@@ -20,7 +20,7 @@ function toggleAbstract(id, btn) {
   <div class="paper-title">Does Cash Buy Credit? Evidence from the Timing of Child-Related Tax Benefits</div>
   <div class="paper-buttons">
     <span class="bookpage-btn" onclick="toggleAbstract('jmp-abstract', this)">Abstract</span>
-    <a class="external-link-btn" href="https://dx.doi.org/10.2139/ssrn.5036978" target="_blank" rel="noopener">Draft</a>
+    <span style="align-self: center;">(draft coming soon!)</span>
   </div>
   <div class="paper-abstract" id="jmp-abstract">
     Many families are financially fragile after the birth of a first child, but whether cash transfers can have lasting effects on their financial well-being is unclear. I link California birth records to a panel of first-time parents' credit reports and exploit a discontinuity in child-related tax benefits that shifts their first receipt by about one year across otherwise similar families. Regression discontinuity estimates show that among financially vulnerable mothers, earlier receipt relaxes borrowing constraints and produces persistent gains: in the third year after the birth, debt in collections is 8% lower, credit limits are 4% higher, and credit card balances are 5% higher. I also find suggestive evidence that mortgage holding rises after the initial credit improvements and that the credit expansion extends to the family as a whole. Financially non-vulnerable mothers show no comparable response, suggesting that the timing of transfers has durable impacts where liquidity constraints bind.
