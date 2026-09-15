@@ -37,6 +37,7 @@ function togglePanel(id, btn) {
 <div class="paper-block">
   <div class="paper-title">Crowded at Birth: Lasting Effects of Maternity Ward Crowding in California</div>
   <div class="paper-meta">with <a href="https://sites.google.com/view/yulixu-econ">Yuli Xu</a></div>
+  <div class="paper-meta"><em>Revise &amp; Resubmit</em>, <strong>Management Science</strong></div>
   <div class="paper-buttons">
     <span class="bookpage-btn" onclick="togglePanel('crowded-abstract', this)">Abstract</span>
     <a class="external-link-btn" href="https://dx.doi.org/10.2139/ssrn.5036978" target="_blank" rel="noopener">Draft</a>
