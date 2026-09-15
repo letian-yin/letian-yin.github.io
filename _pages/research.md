@@ -6,7 +6,9 @@ author_profile: true
 ---
 
 <script>
-function toggleAbstract(id, btn) {
+// Shows/hides a collapsible panel (abstract, presentations list) and marks
+// the button that controls it as active.
+function togglePanel(id, btn) {
   var el = document.getElementById(id);
   if (!el) return;
   el.classList.toggle('show');
@@ -19,7 +21,7 @@ function toggleAbstract(id, btn) {
 <div class="paper-block">
   <div class="paper-title">Does Cash Buy Credit? Evidence from the Timing of Child-Related Tax Benefits</div>
   <div class="paper-buttons">
-    <span class="bookpage-btn" onclick="toggleAbstract('jmp-abstract', this)">Abstract</span>
+    <span class="bookpage-btn" onclick="togglePanel('jmp-abstract', this)">Abstract</span>
     <span style="align-self: center;">(draft coming soon!)</span>
   </div>
   <div class="paper-abstract" id="jmp-abstract">
@@ -33,11 +35,17 @@ function toggleAbstract(id, btn) {
   <div class="paper-title">Crowded at Birth: Lasting Effects of Maternity Ward Crowding in California</div>
   <div class="paper-meta">with <a href="https://sites.google.com/view/yulixu-econ">Yuli Xu</a></div>
   <div class="paper-buttons">
-    <span class="bookpage-btn" onclick="toggleAbstract('crowded-abstract', this)">Abstract</span>
+    <span class="bookpage-btn" onclick="togglePanel('crowded-abstract', this)">Abstract</span>
     <a class="external-link-btn" href="https://dx.doi.org/10.2139/ssrn.5036978" target="_blank" rel="noopener">Draft</a>
+    <span class="presentations-btn" onclick="togglePanel('crowded-presentations', this)">Presentations</span>
   </div>
   <div class="paper-abstract" id="crowded-abstract">
     We study how overcrowding during a woman's first childbirth influences both clinical practices and subsequent healthcare choices, using comprehensive administrative records on all California births between 1989 and 2017. Leveraging quasi-random, within-hospital variation in daily number of patients, we find that overcrowding reduces the intensity of medical interventions—such as C-sections, epidurals, inductions, and augmentations—consistent with efforts to relieve physician workload. Despite these adjustments, we find no detectable adverse effects on immediate maternal or infant health. Looking beyond the initial birth, we show that overcrowding does not alter future fertility but significantly increases the likelihood that mothers switch hospitals for subsequent deliveries. We find no systematic patterns in hospital selection, indicating that switching is driven primarily by negative first-birth experiences.
+  </div>
+  <div class="paper-presentations" id="crowded-presentations">
+    <ul>
+      <li>Placeholder Conference (Placeholder University, 2026)</li>
+    </ul>
   </div>
 </div>
 

@@ -6,12 +6,14 @@
 
      .bookpage-btn        -> file-page icon  (use for Abstract toggles, etc.)
      .external-link-btn   -> arrow-out-of-box icon  (use for outbound links)
+     .presentations-btn   -> microphone icon  (use for Presentations toggles)
 
    Add the `--inline` modifier when the button sits inside a line of body
    text rather than in a block of buttons:
 
      .bookpage-btn.bookpage-btn--inline
      .external-link-btn.external-link-btn--inline
+     .presentations-btn.presentations-btn--inline
    ========================================================================== */
 
 /* Shared pill style — applied via @extend so we don't repeat the rule set. */
@@ -80,9 +82,21 @@
   }
 }
 
+/* ---- Presentations button (microphone icon) ------------------------------ */
+.presentations-btn {
+  @extend %paper-btn-base;
+
+  &::before {
+    @extend %paper-btn-icon;
+    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z'/><path d='M19 10v2a7 7 0 0 1-14 0v-2'/><line x1='12' y1='19' x2='12' y2='23'/><line x1='8' y1='23' x2='16' y2='23'/></svg>");
+            mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z'/><path d='M19 10v2a7 7 0 0 1-14 0v-2'/><line x1='12' y1='19' x2='12' y2='23'/><line x1='8' y1='23' x2='16' y2='23'/></svg>");
+  }
+}
+
 /* ---- Inline modifier (tighter sizing, sits in a line of text) ------------ */
 .bookpage-btn--inline,
-.external-link-btn--inline {
+.external-link-btn--inline,
+.presentations-btn--inline {
   padding: 3px 10px;
   margin-left: 6px;
 }
@@ -90,7 +104,8 @@
 /* ---- Dark mode: softer resting border (hover still flips to link color) -- */
 html[data-theme="dark"] {
   .bookpage-btn,
-  .external-link-btn {
+  .external-link-btn,
+  .presentations-btn {
     border-color: var(--global-border-color);
   }
 }
@@ -138,30 +153,55 @@ html[data-theme="dark"] {
   line-height: 1;
 }
 
-.paper-abstract {
+/* Shared look for the collapsible panels under the buttons (abstract text,
+   presentations list). Hidden until the matching button adds `.show`. */
+%paper-panel {
   display: none;
   margin-top: 0.6em;
-  padding: 0.85em 1.1em;
   background: color-mix(in srgb, var(--global-link-color) 14%, var(--global-bg-color));
   border-left: 3px solid color-mix(in srgb, var(--global-link-color) 55%, transparent);
   border-radius: 0 4px 4px 0;
-  font-size: 0.95em;
   line-height: 1.6;
-  text-align: justify;
 
   &.show { display: block; }
 }
 
-html[data-theme="dark"] .paper-abstract {
-  background: color-mix(in srgb, var(--global-link-color) 6%, var(--global-bg-color));
+.paper-abstract {
+  @extend %paper-panel;
+  padding: 0.85em 1.1em;
+  font-size: 0.95em;
+  text-align: justify;
+}
+
+.paper-presentations {
+  @extend %paper-panel;
+  padding: 0.6em 1.1em;
+  font-size: 0.9em;
+
+  ul {
+    margin: 0;
+    padding-left: 1.2em;
+  }
+
+  li { margin-bottom: 0.3em; }
+  li:last-child { margin-bottom: 0; }
+}
+
+html[data-theme="dark"] {
+  .paper-abstract,
+  .paper-presentations {
+    background: color-mix(in srgb, var(--global-link-color) 6%, var(--global-bg-color));
+  }
 }
 
 @supports not (background: color-mix(in srgb, red, blue)) {
-  .paper-abstract {
+  .paper-abstract,
+  .paper-presentations {
     background: rgba(127, 127, 127, 0.09);
     border-left-color: rgba(127, 127, 127, 0.4);
   }
-  html[data-theme="dark"] .paper-abstract {
+  html[data-theme="dark"] .paper-abstract,
+  html[data-theme="dark"] .paper-presentations {
     background: rgba(127, 127, 127, 0.06);
   }
 }
