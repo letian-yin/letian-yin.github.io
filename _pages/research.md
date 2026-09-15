@@ -6,8 +6,7 @@ author_profile: true
 ---
 
 <script>
-// Shows/hides a collapsible panel (abstract, presentations list) and marks
-// the button that controls it as active.
+/* Shows/hides a collapsible panel and marks the button that controls it as active. */
 function togglePanel(id, btn) {
   var el = document.getElementById(id);
   if (!el) return;
