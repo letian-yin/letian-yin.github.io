@@ -37,16 +37,13 @@ function togglePanel(id, btn) {
     <span class="bookpage-btn" onclick="togglePanel('crowded-abstract', this)">Abstract</span>
     <a class="external-link-btn" href="https://dx.doi.org/10.2139/ssrn.5036978" target="_blank" rel="noopener">Draft</a>
     <span class="presentations-btn" onclick="togglePanel('crowded-presentations', this)">Presentations</span>
-    <span style="align-self: center;">(draft available upon request)</span>
   </div>
   <div class="paper-abstract" id="crowded-abstract">
     We study how overcrowding during a woman's first childbirth influences both clinical practices and subsequent healthcare choices, using comprehensive administrative records on all California births between 1989 and 2017. Leveraging quasi-random, within-hospital variation in daily number of patients, we find that overcrowding reduces the intensity of medical interventions—such as C-sections, epidurals, inductions, and augmentations—consistent with efforts to relieve physician workload. Despite these adjustments, we find no detectable adverse effects on immediate maternal or infant health. Looking beyond the initial birth, we show that overcrowding does not alter future fertility but significantly increases the likelihood that mothers switch hospitals for subsequent deliveries. We find no systematic patterns in hospital selection, indicating that switching is driven primarily by negative first-birth experiences.
   </div>
   <div class="paper-presentations" id="crowded-presentations">
-    <ul>
-      2025 ASHEcon Annual Conference, 2025 All-California Labor Economics Conference (poster), 2025 SEA Annual Meeting
-      By coauthor: 2025 WEAI Annual Conference
-    </ul>
+    <div>2025 ASHEcon Annual Conference, 2025 All-California Labor Economics Conference (poster), 2025 SEA Annual Meeting</div>
+    <div><em>By coauthor:</em> 2025 WEAI Annual Conference</div>
   </div>
 </div>
 
@@ -56,6 +53,7 @@ function togglePanel(id, btn) {
   <div class="paper-buttons">
     <span class="bookpage-btn" onclick="togglePanel('MWY-abstract', this)">Abstract</span>
     <span class="presentations-btn" onclick="togglePanel('MWY-presentations', this)">Presentations</span>
+    <span style="align-self: center;">(draft available upon request)</span>
   </div>
   <div class="paper-abstract" id="MWY-abstract">
     Pregnancy and childbirth mark a major transition for households, but evidence is scarce on their financial costs, families' use of credit markets, and how the burden is split between parents. We build a novel dataset linking parents in California birth records to their quarterly credit reports, and use a staggered difference-in-differences design to trace their financial trajectories around a first birth. We document substantial balance sheet restructuring: mothers see a sharp decline in credit card balances after conception that persists into the postpartum period, and a rise in mortgage holdings during pregnancy that then plateaus. Indicators of financial distress rise after birth, plausibly reflecting new consumption commitments that households cannot easily scale back. Fathers' trajectories track mothers', in contrast to the gendered "child penalty" in earnings. Privately insured mothers drive the deterioration in financial well-being, while Medicaid mothers are less adversely affected, consistent with expanded safety net eligibility buffering the shock.
