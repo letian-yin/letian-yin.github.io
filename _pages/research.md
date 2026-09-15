@@ -21,10 +21,14 @@ function togglePanel(id, btn) {
   <div class="paper-title">Does Cash Buy Credit? Evidence from the Timing of Child-Related Tax Benefits</div>
   <div class="paper-buttons">
     <span class="bookpage-btn" onclick="togglePanel('jmp-abstract', this)">Abstract</span>
+    <span class="presentations-btn" onclick="togglePanel('jmp-presentations', this)">Presentations</span>
     <span style="align-self: center;">(draft coming soon!)</span>
   </div>
   <div class="paper-abstract" id="jmp-abstract">
     Many families are financially fragile after the birth of a first child, but whether cash transfers can have lasting effects on their financial well-being is unclear. I link California birth records to a panel of first-time parents' credit reports and exploit a discontinuity in child-related tax benefits that shifts their first receipt by about one year across otherwise similar families. Regression discontinuity estimates show that among financially vulnerable mothers, earlier receipt relaxes borrowing constraints and produces persistent gains: in the third year after the birth, debt in collections is 8% lower, credit limits are 4% higher, and credit card balances are 5% higher. I also find suggestive evidence that mortgage holding rises after the initial credit improvements and that the credit expansion extends to the family as a whole. Financially non-vulnerable mothers show no comparable response, suggesting that the timing of transfers has durable impacts where liquidity constraints bind.
+  </div>
+  <div class="paper-presentations" id="jmp-presentations">
+    <div>2026 All-California Labor Economics Conference (poster), <em>(scheduled)</em> 2026 APPAM Annual Conference, 2026 NTA Annual Conference</div>
   </div>
 </div>
 
@@ -58,6 +62,9 @@ function togglePanel(id, btn) {
   <div class="paper-abstract" id="MWY-abstract">
     Pregnancy and childbirth mark a major transition for households, but evidence is scarce on their financial costs, families' use of credit markets, and how the burden is split between parents. We build a novel dataset linking parents in California birth records to their quarterly credit reports, and use a staggered difference-in-differences design to trace their financial trajectories around a first birth. We document substantial balance sheet restructuring: mothers see a sharp decline in credit card balances after conception that persists into the postpartum period, and a rise in mortgage holdings during pregnancy that then plateaus. Indicators of financial distress rise after birth, plausibly reflecting new consumption commitments that households cannot easily scale back. Fathers' trajectories track mothers', in contrast to the gendered "child penalty" in earnings. Privately insured mothers drive the deterioration in financial well-being, while Medicaid mothers are less adversely affected, consistent with expanded safety net eligibility buffering the shock.
   </div>
+  <div class="paper-presentations" id="MWY-presentations">
+    <div>2026 ASHEcon Annual Conference (poster), 2026 WEAI Annual Conference</div>
+  </div>
 </div>
 
 ## Work in Progress
@@ -68,4 +75,8 @@ function togglePanel(id, btn) {
 
 <div class="paper-block">
   <div class="paper-title">The Intergenerational Effects of Childhood Cash Transfers</div>
+  <span class="presentations-btn" onclick="togglePanel('intergen-presentations', this)">Presentations</span>
+  <div class="paper-presentations" id="intergen-presentations">
+    <div>2025 SEA Annual Meeting</div>
+  </div>
 </div>
