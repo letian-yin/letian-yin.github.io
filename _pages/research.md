@@ -76,7 +76,9 @@ function togglePanel(id, btn) {
 
 <div class="paper-block">
   <div class="paper-title">The Intergenerational Effects of Childhood Cash Transfers</div>
-  <span class="presentations-btn" onclick="togglePanel('intergen-presentations', this)">Presentations</span>
+  <div class="paper-buttons">
+    <span class="presentations-btn" onclick="togglePanel('intergen-presentations', this)">Presentations</span>
+  </div>
   <div class="paper-presentations" id="intergen-presentations">
     <div>2025 SEA Annual Meeting</div>
   </div>
