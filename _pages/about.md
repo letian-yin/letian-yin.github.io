@@ -12,4 +12,6 @@ I am a PhD candidate in Economics at the University of California San Diego.
 
 My research interests are Public Economics and Health Economics, with a focus on transfer programs, household finance, and fertility.
 
+**I am on the 2026-2027 job market.**
+
 You can reach me at <a class="email-link" href="mailto:lyin@ucsd.edu">lyin@ucsd.edu</a>.
