@@ -87,18 +87,19 @@
 }
 
 /* ---- Toggle button (leading plus / minus sign) --------------------------- */
-/* Borrowed from linchenzhang.github.io: a "+" beside the label while the panel
-   is closed, a "-" once it is open (the reference puts the sign after the
-   label; Tommy wants it before). `.active` is set by togglePanel() in
-   research.md. The sign is drawn with the Feather `plus` / `minus` icons so its
-   stroke weight suits the other pill icons (3 instead of Feather's 2, for a bolder sign); it sits at reduced opacity while
-   closed (the reference site uses a muted text colour for the same effect). */
+/* "+" before the label while the panel is closed, "-" while it is open;
+   `.active` is set by togglePanel() in research.md. Drawn with the Feather
+   `plus` / `minus` icons at stroke-width 3 (Feather ships 2) so the sign's
+   weight reads like the other pill icons, and painted in `currentColor` like
+   them. The closed sign is held a touch below the label (opacity 0.85 --
+   renders #64696c against the #494e52 label in light mode) and goes to full
+   strength when open; drop to 1 for an exact colour match. */
 .toggle-btn {
   @extend %paper-btn-base;
 
   &::before {
     @extend %paper-btn-icon;
-    opacity: 0.55;
+    opacity: 0.85;
     transition: opacity 0.2s ease;
     -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='5' x2='12' y2='19'/><line x1='5' y1='12' x2='19' y2='12'/></svg>");
             mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='5' x2='12' y2='19'/><line x1='5' y1='12' x2='19' y2='12'/></svg>");
