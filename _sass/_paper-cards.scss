@@ -4,16 +4,18 @@
    Buttons are named after the SVG shape they carry — the icon is injected
    automatically via CSS (no need to paste <svg> in markup):
 
-     .bookpage-btn        -> file-page icon  (use for Abstract toggles, etc.)
+     .bookpage-btn        -> file-page icon  (use for Draft / PDF links)
      .external-link-btn   -> arrow-out-of-box icon  (use for outbound links)
-     .presentations-btn   -> microphone icon  (use for Presentations toggles)
+     .toggle-btn          -> leading plus sign that becomes a minus while the
+                             button is `.active`  (use for Abstract and
+                             Presentations toggles)
 
    Add the `--inline` modifier when the button sits inside a line of body
    text rather than in a block of buttons:
 
      .bookpage-btn.bookpage-btn--inline
      .external-link-btn.external-link-btn--inline
-     .presentations-btn.presentations-btn--inline
+     .toggle-btn.toggle-btn--inline
    ========================================================================== */
 
 /* Shared pill style — applied via @extend so we don't repeat the rule set. */
@@ -31,6 +33,8 @@
   vertical-align: middle;
   cursor: pointer;
   background: transparent;
+  -webkit-appearance: none;
+          appearance: none;
   font-family: inherit;
   user-select: none;
   transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
@@ -82,21 +86,35 @@
   }
 }
 
-/* ---- Presentations button (microphone icon) ------------------------------ */
-.presentations-btn {
+/* ---- Toggle button (leading plus / minus sign) --------------------------- */
+/* Borrowed from linchenzhang.github.io: a "+" beside the label while the panel
+   is closed, a "-" once it is open (the reference puts the sign after the
+   label; Tommy wants it before). `.active` is set by togglePanel() in
+   research.md. The sign is drawn with the Feather `plus` / `minus` icons so its
+   stroke weight matches the other pill icons; it sits at reduced opacity while
+   closed (the reference site uses a muted text colour for the same effect). */
+.toggle-btn {
   @extend %paper-btn-base;
 
   &::before {
     @extend %paper-btn-icon;
-    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z'/><path d='M19 10v2a7 7 0 0 1-14 0v-2'/><line x1='12' y1='19' x2='12' y2='23'/><line x1='8' y1='23' x2='16' y2='23'/></svg>");
-            mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z'/><path d='M19 10v2a7 7 0 0 1-14 0v-2'/><line x1='12' y1='19' x2='12' y2='23'/><line x1='8' y1='23' x2='16' y2='23'/></svg>");
+    opacity: 0.55;
+    transition: opacity 0.2s ease;
+    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='5' x2='12' y2='19'/><line x1='5' y1='12' x2='19' y2='12'/></svg>");
+            mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='5' x2='12' y2='19'/><line x1='5' y1='12' x2='19' y2='12'/></svg>");
+  }
+
+  &.active::before {
+    opacity: 1;
+    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='5' y1='12' x2='19' y2='12'/></svg>");
+            mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='5' y1='12' x2='19' y2='12'/></svg>");
   }
 }
 
 /* ---- Inline modifier (tighter sizing, sits in a line of text) ------------ */
 .bookpage-btn--inline,
 .external-link-btn--inline,
-.presentations-btn--inline {
+.toggle-btn--inline {
   padding: 3px 10px;
   margin-left: 6px;
 }
@@ -105,7 +123,7 @@
 html[data-theme="dark"] {
   .bookpage-btn,
   .external-link-btn,
-  .presentations-btn {
+  .toggle-btn {
     border-color: var(--global-border-color);
   }
 }

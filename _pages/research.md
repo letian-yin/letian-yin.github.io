@@ -6,12 +6,18 @@ author_profile: true
 ---
 
 <script>
-/* Shows/hides a collapsible panel and marks the button that controls it as active. */
+/* Shows/hides a collapsible panel; marks the button that controls it as active
+   and keeps its aria-expanded state in sync. Use only block comments in here:
+   the page is compressed to one line, so a line comment would swallow the rest
+   of the script. */
 function togglePanel(id, btn) {
   var el = document.getElementById(id);
   if (!el) return;
-  el.classList.toggle('show');
-  if (btn) btn.classList.toggle('active');
+  var open = el.classList.toggle('show');
+  if (btn) {
+    btn.classList.toggle('active', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
 }
 </script>
 
@@ -20,8 +26,8 @@ function togglePanel(id, btn) {
 <div class="paper-block">
   <div class="paper-title">Does Cash Buy Credit? Evidence from the Timing of Child-Related Tax Benefits</div>
   <div class="paper-buttons">
-    <span class="bookpage-btn" onclick="togglePanel('jmp-abstract', this)">Abstract</span>
-    <span class="presentations-btn" onclick="togglePanel('jmp-presentations', this)">Presentations</span>
+    <button type="button" class="toggle-btn" aria-expanded="false" aria-controls="jmp-abstract" onclick="togglePanel('jmp-abstract', this)">Abstract</button>
+    <button type="button" class="toggle-btn" aria-expanded="false" aria-controls="jmp-presentations" onclick="togglePanel('jmp-presentations', this)">Presentations</button>
     <span style="align-self: center;">(draft coming soon!)</span>
   </div>
   <div class="paper-abstract" id="jmp-abstract">
@@ -39,9 +45,9 @@ function togglePanel(id, btn) {
   <div class="paper-meta">with <a href="https://sites.google.com/view/yulixu-econ">Yuli Xu</a></div>
   <div class="paper-meta"><em>Revise &amp; Resubmit</em>, <strong>Management Science</strong></div>
   <div class="paper-buttons">
-    <span class="bookpage-btn" onclick="togglePanel('crowded-abstract', this)">Abstract</span>
-    <a class="external-link-btn" href="https://dx.doi.org/10.2139/ssrn.5036978" target="_blank" rel="noopener">Draft</a>
-    <span class="presentations-btn" onclick="togglePanel('crowded-presentations', this)">Presentations</span>
+    <a class="bookpage-btn" href="https://dx.doi.org/10.2139/ssrn.5036978" target="_blank" rel="noopener">Draft</a>
+    <button type="button" class="toggle-btn" aria-expanded="false" aria-controls="crowded-abstract" onclick="togglePanel('crowded-abstract', this)">Abstract</button>
+    <button type="button" class="toggle-btn" aria-expanded="false" aria-controls="crowded-presentations" onclick="togglePanel('crowded-presentations', this)">Presentations</button>
   </div>
   <div class="paper-abstract" id="crowded-abstract">
     We study how overcrowding during a woman's first childbirth influences both clinical practices and subsequent healthcare choices, using comprehensive administrative records on all California births between 1989 and 2017. Leveraging quasi-random, within-hospital variation in daily number of patients, we find that overcrowding reduces the intensity of medical interventions—such as C-sections, epidurals, inductions, and augmentations—consistent with efforts to relieve physician workload. Despite these adjustments, we find no detectable adverse effects on immediate maternal or infant health. Looking beyond the initial birth, we show that overcrowding does not alter future fertility but significantly increases the likelihood that mothers switch hospitals for subsequent deliveries. We find no systematic patterns in hospital selection, indicating that switching is driven primarily by negative first-birth experiences.
@@ -56,8 +62,8 @@ function togglePanel(id, btn) {
   <div class="paper-title">The Financial Impacts of Pregnancy and Childbirth</div>
   <div class="paper-meta">with <a href="https://leima-econ.com/">Lei Ma</a> and <a href="https://www.victoriawang.org/">Victoria Wang</a></div>
   <div class="paper-buttons">
-    <span class="bookpage-btn" onclick="togglePanel('MWY-abstract', this)">Abstract</span>
-    <span class="presentations-btn" onclick="togglePanel('MWY-presentations', this)">Presentations</span>
+    <button type="button" class="toggle-btn" aria-expanded="false" aria-controls="MWY-abstract" onclick="togglePanel('MWY-abstract', this)">Abstract</button>
+    <button type="button" class="toggle-btn" aria-expanded="false" aria-controls="MWY-presentations" onclick="togglePanel('MWY-presentations', this)">Presentations</button>
     <span style="align-self: center;">(draft available upon request)</span>
   </div>
   <div class="paper-abstract" id="MWY-abstract">
@@ -77,7 +83,7 @@ function togglePanel(id, btn) {
 <div class="paper-block">
   <div class="paper-title">The Intergenerational Effects of Childhood Cash Transfers</div>
   <div class="paper-buttons">
-    <span class="presentations-btn" onclick="togglePanel('intergen-presentations', this)">Presentations</span>
+    <button type="button" class="toggle-btn" aria-expanded="false" aria-controls="intergen-presentations" onclick="togglePanel('intergen-presentations', this)">Presentations</button>
   </div>
   <div class="paper-presentations" id="intergen-presentations">
     <div>2025 SEA Annual Meeting</div>
