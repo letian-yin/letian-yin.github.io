@@ -10,7 +10,7 @@ Welcome to my website!
 
 I am a PhD candidate in Economics at the University of California San Diego.
 
-My research interests are Public Economics and Health Economics, with a focus on transfer programs, household finance, and fertility.
+My research interests are Public Economics, Health Economics, and Household Finance. I study how families' economic well-being responds to major life events and to the design of tax and transfer programs.
 
 **I am on the 2026-2027 job market.**
 
